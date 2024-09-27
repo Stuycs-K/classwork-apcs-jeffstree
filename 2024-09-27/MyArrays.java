@@ -1,6 +1,10 @@
 public class MyArrays{
   public static void main(String[] args){
+    System.out.println("Test Cases for arytoString():");
     System.out.println("[1, 2, 3, 4, 5]" + " vs my " + aryToString(new int[]{1, 2, 3, 4, 5}));
+
+    System.out.println("\nTest Cases for returnCopy():"); //do test cases for this first!!!
+
   }
 
   public static String aryToString(int[] nums){
@@ -12,5 +16,9 @@ public class MyArrays{
       }
     }
     return str + "]";
+  }
+
+  public static int[] returnCopy(int[] ary){
+    return new int[1]; //insert cool code here
   }
 }
