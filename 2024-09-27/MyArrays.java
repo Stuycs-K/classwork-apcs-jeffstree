@@ -5,6 +5,8 @@ public class MyArrays{
 
     System.out.println("\nTest Cases for returnCopy():"); //do test cases for this first!!!
 
+    int[] ary = [0];
+    System.out.println("Same content? " + CHECK IF SAME THINGS IN BOTH + " Different addresses? " + ary == returnCopy(ary));
   }
 
   public static String aryToString(int[] nums){
