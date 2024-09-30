@@ -83,7 +83,11 @@ public class MyArrays{
   }
 
   public static int[] returnCopy(int[] ary){
-    return new int[1]; //insert cool code here
+    int[] newAry = new int[ary.length];
+    for (int i = 0; i < ary.length; i++){
+      newAry[i] = ary[i];
+    }
+    return newAry;
   }
 
   public static int[] concatArray(int[]ary1, int[]ary2){
