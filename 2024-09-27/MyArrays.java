@@ -1,12 +1,16 @@
 public class MyArrays{
   public static void main(String[] args){
     System.out.println("Test Cases for arytoString():");
+
     System.out.println("[1, 2, 3, 4, 5]" + " vs my " + aryToString(new int[]{1, 2, 3, 4, 5}));
+    System.out.println("[0]" + " vs my " + aryToString(new int[]{0}));
 
-    System.out.println("\nTest Cases for returnCopy():"); //do test cases for this first!!!
+    System.out.println("\nTest Cases for returnCopy():"); 
 
-    int[] ary = [0];
-    System.out.println("Same content? " + CHECK IF SAME THINGS IN BOTH + " Different addresses? " + ary == returnCopy(ary));
+    int[] ary = new int[]{1};
+    boolean matchAry = (aryToString(ary).equals(aryToString(returnCopy(ary))));
+    boolean Address = (ary != returnCopy(ary));
+    System.out.println(aryToString(ary) + " Matching Arrays: " + matchAry + " / Different Addresses: " + Address);
   }
 
   public static String aryToString(int[] nums){
