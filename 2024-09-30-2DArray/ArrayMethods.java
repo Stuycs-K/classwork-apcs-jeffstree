@@ -34,6 +34,19 @@ public static void main(String[] args) {
 
   ary = new int[][]{{1, 3}};
   System.out.println("Expected: [[1], [3]]; Result: "  + arrToString(swapRC(ary)));
+
+//----
+  System.out.println("replaceNegative");
+
+  ary = new int[][]{{1, -2, 3}, {-4, 5, -6}, {7, -8, -9}};
+  System.out.println("Original: " + arrToString(ary) +"; Result: ");
+  replaceNegative(ary);
+  System.out.print(arrToString(ary));
+
+  ary = new int[][]{{}, {-4, 5}, {7, -8, -9}};
+  System.out.println("Original: " + arrToString(ary) +"; Result: ");
+  replaceNegative(ary);
+  System.out.print(arrToString(ary));
 }
 //2. Copy your arrToString method from before.
 /**Return a String that represets the array in the format:
@@ -99,5 +112,32 @@ public static int[][] swapRC(int[][]nums){
     }
   }
   return newNums;
+}
+
+//3. Modify a given 2D array of integer as follows:
+//Replace all the negative values:
+//-When the row number is the same as the column number replace
+//that negative with the value 1
+//-All other negatives replace with 0
+public static void replaceNegative(int[][] vals){
+  for (int i = 0; i < vals.length; i++){
+    for (int x = 0; x < vals[i].length; x++){
+      if (i == x && vals[i][x] < 0){
+        vals[i][x] = 1;
+      }
+      else if (vals[i][x] < 0){
+        vals[i][x] = 0;
+      }
+    }
+  }
+}
+
+//4. Make a copy of the given 2d array.
+//When testing : make sure that changing the original does NOT change the copy.
+//DO NOT use any built in methods that "copy" an array.
+//You SHOULD write a helper method for this.
+//If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[][] copy(int[][] nums){
+  return null;//placeholder so it compiles
 }
 }
