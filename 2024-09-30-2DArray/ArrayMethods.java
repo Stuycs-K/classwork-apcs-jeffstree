@@ -1,7 +1,8 @@
 //1. Jeff Ou, jou60@stuy.edu
 //   Zixi Qiao, zqiao60@stuy.edu
-
+public class ArrayMethods{
 public static void main(String[] args) {
+  System.out.println("arrToString");
   int[][] ary = new int[][]{{1, 2, 3}, {5, 6, 7}, {8, 9, 10}};
   System.out.println("Expected: [[1, 2, 3], [5, 6, 7], [8, 9, 10]]; Result: "  + arrToString(ary));
 
@@ -11,7 +12,7 @@ public static void main(String[] args) {
   ary = new int[][]{{}, {}, {}};
   System.out.println("Expected: [[], [], []]; Result: "  + arrToString(ary));
 
-
+  System.out.println("arr2Dsum");
   ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10}};
   System.out.println("Expected: 55; Result: "  + arr2DSum(ary));
 
@@ -21,7 +22,7 @@ public static void main(String[] args) {
   ary = new int[][]{{2}, {5}, {-1}};
   System.out.println("Expected: 6; Result: "  + arr2DSum(ary));
 
-
+  System.out.println("swapRC");
   ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + swapRC(ary));
 
@@ -35,7 +36,7 @@ public static void main(String[] args) {
 * Note the comma+space between values, and between values
 */
 
-public static String arrToString(int[]ary){
+public static String arrToString(int[]nums){
   String s = "[";
   for (int i = 0; i < nums.length - 1; i++) {
     s = s + nums[i] + ", ";
@@ -60,10 +61,10 @@ public static String arrToString(int[][]ary){
   //this should use arrToString(int[])
   String s = "[";
   for (int i = 0; i < ary.length; i++) {
-    if (i = ary.length - 1) {
+    if (i == ary.length - 1) {
       s += arrToString(ary[i]);
     } else {
-      s = arrToString(ary[i]) + ", ";
+      s += arrToString(ary[i]) + ", ";
     }
   }
   return s + "]";
@@ -81,4 +82,5 @@ public static int arr2DSum(int[][]nums){
   */
 public static int[][] swapRC(int[][]nums){
   return new int[1][1];
+}
 }
