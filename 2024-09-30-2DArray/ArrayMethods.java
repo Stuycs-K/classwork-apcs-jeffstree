@@ -11,7 +11,7 @@ public static void main(String[] args) {
 
   ary = new int[][]{{}, {}, {}};
   System.out.println("Expected: [[], [], []]; Result: "  + arrToString(ary));
-
+//----
   System.out.println("arr2Dsum");
   ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10}};
   System.out.println("Expected: 55; Result: "  + arr2DSum(ary));
@@ -21,14 +21,19 @@ public static void main(String[] args) {
 
   ary = new int[][]{{2}, {5}, {-1}};
   System.out.println("Expected: 6; Result: "  + arr2DSum(ary));
-
+//----
   System.out.println("swapRC");
   ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-  System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + swapRC(ary));
+  System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + arrToString(swapRC(ary)));
 
   ary = new int[][]{{-2, 3}, {1, 5}, {-2, 3}};
-  System.out.println("Expected: [[-2, 1, -2], [3, 5, 3]]; Result: "  + swapRC(ary));
+  System.out.println("Expected: [[-2, 1, -2], [3, 5, 3]]; Result: "  + arrToString(swapRC(ary)));
 
+  ary = new int[][]{{0, 2, 3, 4}, {5, 6, 7, 8}};
+  System.out.println("Expected: [[0, 5], [2, 6], [3, 7], [4, 8]]; Result: "  + arrToString(swapRC(ary)));
+
+  ary = new int[][]{{1, 3}};
+  System.out.println("Expected: [[1], [3]]; Result: "  + arrToString(swapRC(ary)));
 }
 //2. Copy your arrToString method from before.
 /**Return a String that represets the array in the format:
@@ -73,7 +78,13 @@ public static String arrToString(int[][]ary){
 /*Return the sum of all of the values in the 2D array */
 public static int arr2DSum(int[][]nums){
   //use a nested loop to solve this
-  return 1;
+  int sum = 0;
+  for (int i = 0; i < nums.length; i++){
+    for (int x = 0; x < nums[i].length; x++){
+        sum += nums[i][x];
+    }
+  }
+  return sum;
 }
 
 /**Rotate an array by returning a new array with the rows and columns swapped.
@@ -81,6 +92,12 @@ public static int arr2DSum(int[][]nums){
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
 public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
+  int[][] newNums = new int[nums[0].length][nums.length];
+  for (int i = 0; i < nums.length; i++){
+    for (int x = 0; x < nums[i].length; x++){
+        newNums[x][i] = nums[i][x];
+    }
+  }
+  return newNums;
 }
 }
