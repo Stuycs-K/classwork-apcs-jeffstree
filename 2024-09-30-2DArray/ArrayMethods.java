@@ -12,7 +12,7 @@ public static void main(String[] args) {
   ary = new int[][]{{}, {}, {}};
   System.out.println("Expected: [[], [], []]; Result: "  + arrToString(ary));
 //----
-  System.out.println("arr2Dsum");
+  System.out.println("\narr2Dsum");
   ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10}};
   System.out.println("Expected: 55; Result: "  + arr2DSum(ary));
 
@@ -22,7 +22,7 @@ public static void main(String[] args) {
   ary = new int[][]{{2}, {5}, {-1}};
   System.out.println("Expected: 6; Result: "  + arr2DSum(ary));
 //----
-  System.out.println("swapRC");
+  System.out.println("\nswapRC");
   ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
   System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + arrToString(swapRC(ary)));
 
@@ -36,7 +36,7 @@ public static void main(String[] args) {
   System.out.println("Expected: [[1], [3]]; Result: "  + arrToString(swapRC(ary)));
 
 //----
-  System.out.println("replaceNegative");
+  System.out.println("\nreplaceNegative");
 
   ary = new int[][]{{1, -2, 3}, {-4, 5, -6}, {7, -8, -9}};
   System.out.println("Original: " + arrToString(ary) +"; Result: ");
