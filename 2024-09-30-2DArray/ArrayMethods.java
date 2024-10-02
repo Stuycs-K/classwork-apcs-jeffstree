@@ -38,15 +38,43 @@ public static void main(String[] args) {
 //----
   System.out.println("\nreplaceNegative");
 
-  ary = new int[][]{{1, -2, 3}, {-4, 5, -6}, {7, -8, -9}};
-  System.out.println("Original: " + arrToString(ary) +"; Result: ");
+  ary = new int[][]{{1, -2, 3}, {-4, -5, -6}, {7, -8, -9}};
+  System.out.print("\nOriginal: " + arrToString(ary) +"; Result: ");
   replaceNegative(ary);
   System.out.print(arrToString(ary));
 
   ary = new int[][]{{}, {-4, 5}, {7, -8, -9}};
-  System.out.println("Original: " + arrToString(ary) +"; Result: ");
+  System.out.print("\nOriginal: " + arrToString(ary) +"; Result: ");
   replaceNegative(ary);
   System.out.print(arrToString(ary));
+
+//----
+  System.out.println("\ncopy");
+
+  ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  boolean matchAry = (arrToString(ary).equals(arrToString(copy(ary))));
+  boolean Address = (ary != copy(ary));
+  System.out.println("Matching Arrays: " + matchAry + " / Different Addresses: " + Address + " / " + arrToString(ary));
+  
+  ary = new int[][]{{1}, {-2, 3}, {4, 0, 6}};
+  matchAry = (arrToString(ary).equals(arrToString(copy(ary))));
+  Address = (ary != copy(ary));
+  System.out.println("Matching Arrays: " + matchAry + " / Different Addresses: " + Address + " / " + arrToString(ary));
+
+  ary = new int[][]{{}, {}, {}};
+  matchAry = (arrToString(ary).equals(arrToString(copy(ary))));
+  Address = (ary != copy(ary));
+  System.out.println("Matching Arrays: " + matchAry + " / Different Addresses: " + Address + " / " + arrToString(ary));
+
+  ary = new int[][]{{1, 2, 3}};
+  matchAry = (arrToString(ary).equals(arrToString(copy(ary))));
+  Address = (ary != copy(ary));
+  System.out.println("Matching Arrays: " + matchAry + " / Different Addresses: " + Address + " / " + arrToString(ary));
+
+  ary = new int[][]{{}};
+   matchAry = (arrToString(ary).equals(arrToString(copy(ary))));
+   Address = (ary != copy(ary));
+  System.out.println("Matching Arrays: " + matchAry + " / Different Addresses: " + Address + " / " + arrToString(ary));
 }
 //2. Copy your arrToString method from before.
 /**Return a String that represets the array in the format:
@@ -138,6 +166,6 @@ public static void replaceNegative(int[][] vals){
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
 public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+  return new int[][]{{1}};//placeholder so it compiles
 }
 }
