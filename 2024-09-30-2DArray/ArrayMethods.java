@@ -39,14 +39,14 @@ public static void main(String[] args) {
   System.out.println("\nreplaceNegative");
 
   ary = new int[][]{{1, -2, 3}, {-4, -5, -6}, {7, -8, -9}};
-  System.out.print("\nOriginal: " + arrToString(ary) +"; Result: ");
+  System.out.print("Original: " + arrToString(ary) +"; Result: ");
   replaceNegative(ary);
   System.out.print(arrToString(ary));
 
   ary = new int[][]{{}, {-4, 5}, {7, -8, -9}};
   System.out.print("\nOriginal: " + arrToString(ary) +"; Result: ");
   replaceNegative(ary);
-  System.out.print(arrToString(ary));
+  System.out.println(arrToString(ary));
 
 //----
   System.out.println("\ncopy");
@@ -165,7 +165,22 @@ public static void replaceNegative(int[][] vals){
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
+public static int[] returnCopy(int[] ary){
+    int[] newAry = new int[ary.length];
+    for (int i = 0; i < ary.length; i++){
+      newAry[i] = ary[i];
+    }
+    return newAry;
+  }
+
 public static int[][] copy(int[][] nums){
-  return new int[][]{{1}};//placeholder so it compiles
+  int [][] newAry = new int[nums.length][];
+  for (int i = 0; i < nums.length; i++){
+    newAry[i] = new int[nums[i].length];
+    for (int x = 0; x < nums[i].length; x++){
+      newAry[i][x] = nums[i][x];
+    }
+  }
+  return newAry;
 }
 }
