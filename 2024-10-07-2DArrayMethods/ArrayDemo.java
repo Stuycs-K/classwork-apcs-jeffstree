@@ -1,19 +1,24 @@
 import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
-    //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
-    //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
-    //do not use any other Arrays.method()
+    int[] ary1D;
+    int[][] ary;
+
+    System.out.println("Testing arrToString (1D)");
+
+    ary1D = new int[]{1, 2, 3};
+    System.out.println("My " + arrToString(ary1D) + " vs " + Arrays.toString(ary1D));
+    //------
 
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
     String str = "[";
-    for (int i = 0; i < nums.length; i++){
-      str += nums[i] + ", ";
-      if (i == nums.length - 1){
+    for (int i = 0; i < ary.length; i++){
+      str += ary[i] + ", ";
+      if (i == ary.length - 1){
         str = str.substring(0, str.length() - 2);
       }
     }
