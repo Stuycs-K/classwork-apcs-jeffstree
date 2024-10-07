@@ -10,7 +10,10 @@ public class ArrayDemo{
     ary1D = new int[]{1, 2, 3};
     System.out.println("My " + arrToString(ary1D) + " vs " + Arrays.toString(ary1D));
     //------
+    System.out.println("\nTesting arrToString (2D)");
 
+    ary = new int[][]{{1, 2, 3}, {4, 5, 6}};
+    System.out.println("My [[1, 2, 3], [4, 5, 6]] vs " + arrToString(ary);
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
