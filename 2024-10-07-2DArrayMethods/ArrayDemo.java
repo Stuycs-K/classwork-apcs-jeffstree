@@ -83,7 +83,7 @@ public class ArrayDemo{
     System.out.println("Matching Arrays: " + matchAry + " / Different Addresses: " + Address + " / " + arrToString(ary));
     //------
     System.out.println("\nswapRC");
-    
+
     ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + arrToString(swapRC(ary)));
 
@@ -95,6 +95,20 @@ public class ArrayDemo{
 
     ary = new int[][]{{1, 3}};
     System.out.println("Expected: [[1], [3]]; Result: "  + arrToString(swapRC(ary)));
+    //------
+    System.out.println("\nhtmlTable");
+
+    ary = new int[][]{{1, 2, 3}, {4, 5}};
+    System.out.println("Original: " + arrToString(ary) + "; Result: " + htmlTable(ary));
+
+    ary = new int[][]{{1, -2, 0}};
+    System.out.println("Original: " + arrToString(ary) + "; Result: " + htmlTable(ary));
+
+    ary = new int[][]{{}, {1, 2, 3}};
+    System.out.println("Original: " + arrToString(ary) + "; Result: " + htmlTable(ary));
+
+    ary = new int[][]{{}};
+    System.out.println("Original: " + arrToString(ary) + "; Result: " + htmlTable(ary));
 }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
