@@ -13,7 +13,24 @@ public class ArrayDemo{
     System.out.println("\nTesting arrToString (2D)");
 
     ary = new int[][]{{1, 2, 3}, {4, 5, 6}};
-    System.out.println("My [[1, 2, 3], [4, 5, 6]] vs " + arrToString(ary);
+    System.out.println("My [[1, 2, 3], [4, 5, 6]] vs " + arrToString(ary));
+    //------
+    System.out.println("\nTesting countZeros2D");
+    
+    ary = new int[][]{{1, 2, 3}, {0, 5}};
+    System.out.println("My 1 vs " + countZeros2D(ary));
+
+    ary = new int[][]{{1, 2, 3}, {4, 5}};
+    System.out.println("My 0 vs " + countZeros2D(ary));
+
+    ary = new int[][]{{0, 0, 0}, {-1, 0}};
+    System.out.println("My 4 vs " + countZeros2D(ary));
+
+    ary = new int[][]{{0, 0, 0}, {0, 0}};
+    System.out.println("My 5 vs " + countZeros2D(ary));
+
+    ary = new int[][]{{}};
+    System.out.println("My 0 vs " +countZeros2D(ary));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
