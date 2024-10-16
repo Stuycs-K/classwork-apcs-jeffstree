@@ -9,7 +9,6 @@ public class Demo{
   }
 
   public static void main(String[]args){
-    // case 1
     Point p1 = new Point(1,1);
     Point p2 = new Point(-1,-1);
     Point p3 = new Point(3,4);
@@ -30,5 +29,12 @@ public class Demo{
     System.out.println( Point.distance(p2,p3));
     System.out.println( p3.distanceTo(p2));
 
+    p1 = new Point(0, 0);
+    p2 = new Point(1, 0);
+    p3 = new Point(1.0/2, Math.sqrt(3) / 2);
+
+    System.out.println(distance(p1, p2));
+    System.out.println(p1.distanceTo(p3));
+    System.out.println(Point.distance(p2, p3));
   }
 }
