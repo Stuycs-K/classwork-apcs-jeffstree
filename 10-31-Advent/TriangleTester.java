@@ -1,25 +1,35 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class TriangleTester{
   public static int countTrianglesA(String filename){
-    int[] currentLine = new int[3];
-    int count = 0;
-    while (filename.hasNextLine()){
-      for (int i = 0; i < 3; i++){
-        currentLine[i] = filename.nextInt();
-      }
+    try{
+      int[] currentLine = new int[3];
+      int count = 0;
+      File file = new File(filename);
+      Scanner input = new Scanner(file);
+      
+      while (input.hasNextInt()){
+        for (int i = 0; i < 3; i++){
+          currentLine[i] = input.nextInt();
+        }
 
-      a = currentLine[0];
-      b = currentLine[1];
-      c = currentLine[2];
+        int a = currentLine[0];
+        int b = currentLine[1];
+        int c = currentLine[2];
 
-      if (a + b > c || a + c > b)
-      {
-        continue;
+        if (a + b > c && a + c > b && b + c > a){
+          count += 1;
+        }
       }
-      else{
-        count += 1;
-      }
-
+      input.close();
+      return count;
+      
+    } catch (FileNotFoundException e) {
+      System.out.println("File not found!");
+      return -1;
+    
     }
-    return count;
   }
 }
