@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class ArrayListPractice {
   public static ArrayList<String>createRandomArray(int size) {
     ArrayList<String> result = new ArrayList<String>();
