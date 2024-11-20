@@ -33,8 +33,28 @@ public class Day4{
                 }
             }
         }
-        System.out.println(Arrays.toString(count));
+
+        int mostCommonAmt = 0;
+        for(int i = 0; i < count.length; i++){
+            if (count[i] > mostCommonAmt){
+                mostCommonAmt = count[i];
+            }
+        }
+        String mostCommonLetters = "";
+        while(mostCommonAmt > -1){ //finding largest number from left to right 
+            for(int i = 0; i < count.length; i++){
+                if (count[i] == mostCommonAmt && mostCommonLetters.length() < 5){
+                    mostCommonLetters += alphabet[i];
+                }
+            }
+            mostCommonAmt --;
+        }
+        
+        if (checksum.equals(mostCommonLetters)){
+            sum += sectorID;
+        }
       }
+      System.out.println(sum);
       sc.close();
 
     }catch(FileNotFoundException e){
