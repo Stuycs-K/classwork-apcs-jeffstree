@@ -9,12 +9,12 @@ public class Day2{
       File day2 = new File("day2.txt");
       Scanner sc = new Scanner(day2);
       int[][] keypad = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+      int x = 1, y = 1;
       while(sc.hasNext()){
         String input = sc.next();
         String[] movement = input.split("");
-
-        int x = 1, y = 1;
-        for (int i = 0; i < movement.length; i++){
+        
+        for (int i = 0; i < movement.length; i++){ //(0, 0) is on bottom left, (2, 2) is top right
           if (movement[i].equals("U"))y++;
           if (movement[i].equals("R"))x++;
           if (movement[i].equals("D"))y--;
@@ -25,7 +25,7 @@ public class Day2{
           if (y < 0) y = 0;
           if (y > 2) y = 2;
         }
-        System.out.println(x + ", " + y);
+        System.out.print(keypad[2 - y][x]);
 
       }
       
