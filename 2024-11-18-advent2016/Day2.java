@@ -12,9 +12,20 @@ public class Day2{
       while(sc.hasNext()){
         String input = sc.next();
         String[] movement = input.split("");
-        System.out.println(Arrays.toString(movement));
+
         int x = 1, y = 1;
-        
+        for (int i = 0; i < movement.length; i++){
+          if (movement[i].equals("U"))y++;
+          if (movement[i].equals("R"))x++;
+          if (movement[i].equals("D"))y--;
+          if (movement[i].equals("L"))x--;
+
+          if (x < 0) x = 0;
+          if (x > 2) x = 2;
+          if (y < 0) y = 0;
+          if (y > 2) y = 2;
+        }
+        System.out.println(x + ", " + y);
 
       }
       
