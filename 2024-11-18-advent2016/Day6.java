@@ -26,6 +26,7 @@ public class Day6{
       }
 
       String message = "";
+      String part2message = "";
       String alpha = "abcdefghijklmnopqrstuvwxyz";
       String[] alphabet = alpha.split("");
       for(int eachColumn = 0; eachColumn < columns.size(); eachColumn++){ //goes through each column
@@ -48,8 +49,19 @@ public class Day6{
           }
         }
         message += mostCommonLetter;
+
+        int leastCommonAmt = count[0];
+        String leastCommonLetter = "";
+        for(int k = 0; k < count.length; k++){
+          if (count[k] < leastCommonAmt){
+            leastCommonAmt = count[k];
+            leastCommonLetter = alphabet[k];
+          }
+        }
+        part2message += leastCommonLetter;
       }
       System.out.println(message);
+      System.out.println(part2message);
       sc.close();
 
     }catch(FileNotFoundException e){
