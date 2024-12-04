@@ -1,12 +1,8 @@
 public class Driver{
   public static void main(String[] args){
-    ColorDemo.go(1, 5);
+    System.out.println(ColorDemo.makeWater("The power of water is its ability to take any shape"));
+    System.out.println("Should be clear");
   }
 }
 
-/* Drawing of a fish
-~-~-~-~-~-~-~ _______ ~-~-~-~-~-~-~-~-~
--~-~-~-~-~-~-/       \-~-~-~-~-~-~-~-~-
-~-~-~-~-~-~-/         \-~-~-~-~-~-~-~-~
--~-~-~-~-~--
-*/
+
