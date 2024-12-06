@@ -1,5 +1,7 @@
 public class Warrior extends Adventurer{
+  private int RP, maxRP;
 
+  //constructors
   public Warrior(String name){
     super(name);
   }
@@ -8,20 +10,25 @@ public class Warrior extends Adventurer{
     super(name, hp);
   }
 
+  /*
+    all adventurers must have a custom special
+    consumable resource (mana/rage/money/witts etc)
+  */
+
   public String getSpecialName(){
-    return "";
+    return "rage";
   }
 
   public int getSpecial(){
-    return 0;
+    return RP;
   }
 
   public void setSpecial(int n){
-    return;
+    RP = n;
   }
 
   public int getSpecialMax(){
-    return 0;
+    return maxRP;
   }
 
   //hurt or hinder the target adventurer
