@@ -6,20 +6,16 @@ public class Game{
 
     System.out.println("Enter username: ");
     String username = userInput.nextLine();
-    System.out.println("Username is: " + username);
 
     Adventurer player = new Warrior(username);
-    Adventurer enemy = new CodeWarrior("Emerie the Enemy");
+    Adventurer enemy = new CodeWarrior("Emerie the Enemy", 8);
 
     String playerInfo = player + ", " + player.getHP() + "/" + player.getmaxHP() + " HP, " + player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecialName();
     String enemyInfo = enemy + ", " + enemy.getHP() + "/" + enemy.getmaxHP() + " HP, " + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName();
     System.out.println("You are: " + playerInfo);
     System.out.println("Your opponent is: " + enemyInfo);
 
-    boolean playerIsAlive = player.getHP() > 0;
-    boolean enemyIsAlive = enemy.getHP() > 0;
-
-    while(playerIsAlive && enemyIsAlive){
+    while(true){
 
       boolean validAction = false;
       while(!validAction){ //player actions
@@ -45,6 +41,11 @@ public class Game{
         }
       }
 
+      if(enemy.getHP() <= 0){ //checks if enemy died from player attack
+        System.out.println(player + " has defeated " + enemy + "!");
+        return;
+      }
+
       int randInt = (int)(Math.random() * 3); //enemy actions
       if (randInt == 0){
         System.out.println(enemy.attack(player));
@@ -56,6 +57,15 @@ public class Game{
         System.out.println(enemy.support());
       }
 
+      if(player.getHP() <= 0){ //checks if player died from enemy attack
+        System.out.println(enemy + " has defeated " + player + "!");
+        return;
+      }
+
+      playerInfo = player + ", " + player.getHP() + "/" + player.getmaxHP() + " HP, " +
+             player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecialName();
+      enemyInfo = enemy + ", " + enemy.getHP() + "/" + enemy.getmaxHP() + " HP, " + 
+            enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName();
       System.out.println(playerInfo);
       System.out.println(enemyInfo);
     }
