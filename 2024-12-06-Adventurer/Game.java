@@ -16,12 +16,14 @@ public class Game{
     System.out.println("You are: " + playerInfo);
     System.out.println("Your opponent is: " + enemyInfo);
 
-    boolean hasQuit = false;
-    while(!hasQuit){
+    boolean playerIsAlive = player.getHP() > 0;
+    boolean enemyIsAlive = enemy.getHP() > 0;
+
+    while(playerIsAlive && enemyIsAlive){
 
       boolean validAction = false;
-      while(!validAction){
-        System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+      while(!validAction){ //player actions
+        System.out.println("\nType: (a)ttack / (sp)ecial / (su)pport / quit");
         String playerAction = userInput.nextLine();
         if(playerAction.equals("a") || playerAction.equals("attack")){
           System.out.println(player.attack(enemy));
@@ -43,7 +45,19 @@ public class Game{
         }
       }
 
-      System.out.println("ENEMY DOES A THING");
+      int randInt = (int)(Math.random() * 3); //enemy actions
+      if (randInt == 0){
+        System.out.println(enemy.attack(player));
+      }
+      else if (randInt == 1){
+        System.out.println(enemy.specialAttack(player));
+      }
+      else if (randInt == 2){
+        System.out.println(enemy.support());
+      }
+
+      System.out.println(playerInfo);
+      System.out.println(enemyInfo);
     }
   }
 }
