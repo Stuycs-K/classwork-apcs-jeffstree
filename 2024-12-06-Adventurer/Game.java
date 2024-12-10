@@ -21,16 +21,29 @@ public class Game{
 
       boolean validAction = false;
       while(!validAction){
-        System.out.println("Type: Type: (a)ttack / (sp)ecial / (su)pport / quit");
+        System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
         String playerAction = userInput.nextLine();
-        if(playerAction.equals(a) || playerAction.equals(attack)){
-          System.out.println("ATTACK HAPPENS");
+        if(playerAction.equals("a") || playerAction.equals("attack")){
+          System.out.println(player.attack(enemy));
           validAction = true;
         }
-        //ADD WHAT HAPPENS WHEN PLAYER CHOOSES SPECIAL, SUPPORT, OR QUIT
+        else if(playerAction.equals("sp") || playerAction.equals("special")){
+          System.out.println(player.specialAttack(enemy));
+          validAction = true;
+        }
+        else if(playerAction.equals("su") || playerAction.equals("support")){
+          System.out.println(player.support());
+          validAction = true;
+        }
+        else if (playerAction.equals("quit")){
+          return;
+        }
+        else{
+          System.out.println("Invalid move! Please select (a)ttack / (sp)ecial / (su)pport / quit");
+        }
       }
 
-      String.out.println("ENEMY DOES A THING");
+      System.out.println("ENEMY DOES A THING");
     }
   }
 }
