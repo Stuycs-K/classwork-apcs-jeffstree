@@ -1,10 +1,10 @@
 public class Fib{
   public static int fib(int num){
-    if(n < 2){
-      return n;
+    if(num < 2){
+      return num;
     }
     else{
-      return fib(n-2) + fib(n-1);
+      return fib(num - 2) + fib(num - 1);
     }
   }
 }
